@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04877DBC-529C-4E17-9E49-7343E9AA2FDF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CardGame</RootNamespace>
+    <AssemblyName>CardGame</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A217D4DCBDD6E4027D8B5D6E47153D3F8A30903C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CardGame_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Cat_128px_1195592_easyicon.net.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CardConstant.cs" />
+    <Compile Include="Control\MessageBoxX.xaml.cs">
+      <DependentUpon>MessageBoxX.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Card2ImageConver.cs" />
+    <Compile Include="Helper\ScoreConverter.cs" />
+    <Compile Include="Coordinate.cs" />
+    <Compile Include="Exhibition.xaml.cs">
+      <DependentUpon>Exhibition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\VisualHelper.cs" />
+    <Compile Include="ITransFormer.cs" />
+    <Compile Include="Scorer.cs" />
+    <Compile Include="Filter.cs" />
+    <Page Include="Control\MessageBoxX.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exhibition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Style\NormalButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\10c.jpg" />
+    <Resource Include="Assets\10d.jpg" />
+    <Resource Include="Assets\10h.jpg" />
+    <Resource Include="Assets\10s.jpg" />
+    <Resource Include="Assets\11c.jpg" />
+    <Resource Include="Assets\11d.jpg" />
+    <Resource Include="Assets\11h.jpg" />
+    <Resource Include="Assets\11s.jpg" />
+    <Resource Include="Assets\12c.jpg" />
+    <Resource Include="Assets\12d.jpg" />
+    <Resource Include="Assets\12h.jpg" />
+    <Resource Include="Assets\12s.jpg" />
+    <Resource Include="Assets\13c.jpg" />
+    <Resource Include="Assets\13d.jpg" />
+    <Resource Include="Assets\13h.jpg" />
+    <Resource Include="Assets\13s.jpg" />
+    <Resource Include="Assets\1c.jpg" />
+    <Resource Include="Assets\1d.jpg" />
+    <Resource Include="Assets\1h.jpg" />
+    <Resource Include="Assets\1s.jpg" />
+    <Resource Include="Assets\2c.jpg" />
+    <Resource Include="Assets\2d.jpg" />
+    <Resource Include="Assets\2h.jpg" />
+    <Resource Include="Assets\2s.jpg" />
+    <Resource Include="Assets\3c.jpg" />
+    <Resource Include="Assets\3d.jpg" />
+    <Resource Include="Assets\3h.jpg" />
+    <Resource Include="Assets\3s.jpg" />
+    <Resource Include="Assets\4c.jpg" />
+    <Resource Include="Assets\4d.jpg" />
+    <Resource Include="Assets\4h.jpg" />
+    <Resource Include="Assets\4s.jpg" />
+    <Resource Include="Assets\5c.jpg" />
+    <Resource Include="Assets\5d.jpg" />
+    <Resource Include="Assets\5h.jpg" />
+    <Resource Include="Assets\5s.jpg" />
+    <Resource Include="Assets\6c.jpg" />
+    <Resource Include="Assets\6d.jpg" />
+    <Resource Include="Assets\6h.jpg" />
+    <Resource Include="Assets\6s.jpg" />
+    <Resource Include="Assets\7c.jpg" />
+    <Resource Include="Assets\7d.jpg" />
+    <Resource Include="Assets\7h.jpg" />
+    <Resource Include="Assets\7s.jpg" />
+    <Resource Include="Assets\8c.jpg" />
+    <Resource Include="Assets\8d.jpg" />
+    <Resource Include="Assets\8h.jpg" />
+    <Resource Include="Assets\8s.jpg" />
+    <Resource Include="Assets\9c.jpg" />
+    <Resource Include="Assets\9d.jpg" />
+    <Resource Include="Assets\9h.jpg" />
+    <Resource Include="Assets\9s.jpg" />
+    <Resource Include="Assets\14b.jpg" />
+    <Resource Include="Assets\14s.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Media\ISeeFire.m4a">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Media\ChinesePoker.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cat_128px_1195592_easyicon.net.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\black.jpg" />
+    <Resource Include="Assets\white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\bullet-1.png" />
+    <Resource Include="Assets\bullet-2.png" />
+    <Resource Include="Assets\bullet-250.png" />
+    <Resource Include="Assets\bullet-3.png" />
+    <Resource Include="Assets\bullet-4.png" />
+    <Resource Include="Assets\bullet-5.png" />
+    <Resource Include="Assets\bullet-50.png" />
+    <Resource Include="Assets\bullet-25.png" />
+    <Resource Include="Assets\bullet-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\colorful.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\scare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\bullet-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ScoreInfo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

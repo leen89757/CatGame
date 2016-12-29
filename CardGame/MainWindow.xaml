@@ -1,0 +1,270 @@
+﻿<Window x:Class="CardGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardGame"
+        xmlns:Cvter="clr-namespace:CardGame.Converters"
+        mc:Ignorable="d"
+        Title="Card Game" Height="840" Width="760" Background="#FF086F9E"
+        MinWidth="760">
+
+    <Window.Resources>
+        <Cvter:ScoreConverter x:Key="score2Image"/>
+        <Style TargetType="{x:Type TextBlock}">
+            <Style.Setters>
+                <Setter Property="TextAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="Foreground" Value="Wheat"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="{x:Type Border}">
+            <Style.Setters>
+                <Setter Property="BorderBrush" Value="SeaGreen"/>
+                <Setter Property="BorderThickness" Value="2"/>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+
+    <Grid ShowGridLines="False" x:Name="wholeGrid"
+          HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="142"/>
+            <RowDefinition Height="142"/>
+            <RowDefinition Height="142"/>
+            <RowDefinition Height="142"/>
+            <RowDefinition Height="142"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btn11" Grid.Row="0" Grid.Column="1" Click="Btn_Click" Width="100" Height="142">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn12" Grid.Row="0" Grid.Column="2" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn13" Grid.Row="0" Grid.Column="3" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn14" Grid.Row="0" Grid.Column="4" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn15" Grid.Row="0" Grid.Column="5" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn21" Grid.Row="1" Grid.Column="1" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn22" Grid.Row="1" Grid.Column="2" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn23" Grid.Row="1" Grid.Column="3" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn24" Grid.Row="1" Grid.Column="4" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn25" Grid.Row="1" Grid.Column="5" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn31" Grid.Row="2" Grid.Column="1" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn32" Grid.Row="2" Grid.Column="2" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn33" Grid.Row="2" Grid.Column="3" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn34" Grid.Row="2" Grid.Column="4" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn35" Grid.Row="2" Grid.Column="5" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn41" Grid.Row="3" Grid.Column="1" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn42" Grid.Row="3" Grid.Column="2" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn43" Grid.Row="3" Grid.Column="3" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn44" Grid.Row="3" Grid.Column="4" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn45" Grid.Row="3" Grid.Column="5" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn51" Grid.Row="4" Grid.Column="1" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn52" Grid.Row="4" Grid.Column="2" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn53" Grid.Row="4" Grid.Column="3" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn54" Grid.Row="4" Grid.Column="4" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+        <Button x:Name="btn55" Grid.Row="4" Grid.Column="5" Click="Btn_Click">
+            <Image Source="{Binding Path=BlankSource}"/>
+        </Button>
+
+        <Grid Grid.Column="0" Grid.RowSpan="2" Background="#FF086F9E">
+            <Border Margin="0,3">
+                <StackPanel VerticalAlignment="Center">
+                    <Image x:Name="nextImg" 
+                   Source="{Binding Path=ForetellImage}"
+                   Width="105" Height="150"/>
+                    <TextBlock x:Name="nextText" 
+                VerticalAlignment="Bottom"
+                       Margin="0,20"
+                       FontStyle="Italic"
+                       FontSize="16"
+                       Text="Next One">
+                        
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <TextBlock Text="Game Rule"  
+                   Grid.Row="3"
+                   Grid.RowSpan="2"
+                   Height="50"
+                   Foreground="Orange"
+                   Opacity="0.5"
+                   TextDecorations="Underline"
+                   Panel.ZIndex="1"
+                   FontSize="13"
+                   MouseDown="TextBlock_MouseDown"
+                   ToolTip="tap to see more score details">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="FontSize"
+                                    To="16"
+                                    Duration="0:0:0.5"/>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="Opacity"
+                                    To="1"
+                                    Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="FontSize"
+                                    To="13"
+                                    Duration="0:0:0.5"/>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="Opacity"
+                                    To="0.5"
+                                    Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
+        
+        <Border Grid.Row="2" Grid.Column="0" Grid.RowSpan="2"
+                Width="150" Height="180"
+                Background="#FF086F9E">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock  
+                       FontStyle="Italic"
+                       FontSize="16"
+                       Text="Score"/>
+                <TextBlock FontStyle="Italic"
+                       FontSize="16"
+                       Text="{Binding Path=ScoreSum}"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="0" 
+                Width="150" Height="120"
+                Background="#FF086F9E">
+            <StackPanel VerticalAlignment="Center">
+                <Button x:Name="againButton"
+                        Margin="0,10"
+                         Style="{DynamicResource sideButtonStyle}"
+                         Width="100"
+                        Height="40"
+                        FontWeight="Bold"
+                        Foreground="SeaGreen"
+                        FontStyle="Italic"
+                        FontSize="16"
+                        Click="RepeatButton_Click">Again</Button>
+
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="0">
+            <Image  Source="{Binding Path=ScoreList[11],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="1">
+            <Image  Source="{Binding Path=ScoreList[6],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="2">
+            <Image  Source="{Binding Path=ScoreList[7],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="3">
+            <Image  Source="{Binding Path=ScoreList[8],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="4">
+            <Image  Source="{Binding Path=ScoreList[9],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="5">
+            <Image  Source="{Binding Path=ScoreList[10],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="5" Grid.Column="6">
+            <Image  Source="{Binding Path=ScoreList[5],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="6">
+            <Image  Source="{Binding Path=ScoreList[4],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="3" Grid.Column="6">
+            <Image  Source="{Binding Path=ScoreList[3],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="6">
+            <Image  Source="{Binding Path=ScoreList[2],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="6">
+            <Image  Source="{Binding Path=ScoreList[1],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="6">
+            <Image  Source="{Binding Path=ScoreList[0],
+                Converter={StaticResource score2Image}}"/>
+        </Border>
+    </Grid>
+</Window>
