@@ -40,7 +40,7 @@ namespace CardGame
         public MainWindow()
         {
             InitializeComponent();
-            //PlayMusic();
+            PlayMusic();
             InitCards();
             PrepareCards();
             Overturn(nextImg, _foretells[_overturnCounter]);
