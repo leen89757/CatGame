@@ -1,7 +1,6 @@
 # Binary files
 bin/
 obj/
-Debug/
 *.suo
 *.user
 *.csproj
