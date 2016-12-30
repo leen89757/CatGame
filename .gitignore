@@ -1,8 +1,6 @@
 # Object files
-*.o
-*.ko
-*.obj
-*.elf
+*.suo
+*.vshost.exe
 
 # Precompiled Headers
 *.gch
@@ -29,7 +27,6 @@
 *.hex
 
 # Debug files
-*.dSYM/
-*.su
 *.Obj/
 *.Debug/
+*..vs/

@@ -47,7 +47,7 @@ namespace CardGame
             this.DataContext = this;
             _player.MediaEnded += MediaEnded;
 
-            //Register for communicating with Exhibtition 
+            //Register for interacting with Exhibtition 
             Exhibition.MessageNotified += ReveiveMessage;
         }
 
