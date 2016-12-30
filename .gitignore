@@ -1,32 +1,18 @@
-# Object files
+# Binary files
 *.suo
+/*.sln
+*.user
+*.csproj
 *.vshost.exe
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+*.csproj.user
 
 # Executables
 *.exe
-*.out
-*.app
 *.i*86
 *.x86_64
-*.hex
 
 # Debug files
-*.Obj/
+* bin/
+*.obj/
 *.Debug/
 *..vs/
