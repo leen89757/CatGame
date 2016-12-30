@@ -10,7 +10,7 @@ namespace CardGame
 
         public static List<int> ObtainScores(string[,] cardsArrays)
         {
-            List<int> resultList = new List<int>() { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            var resultList = new List<int>() { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             FigureRowsOut(cardsArrays, resultList);
 
@@ -27,7 +27,7 @@ namespace CardGame
         {
             //Left opposite angle score 
             bool leftOppAngleFull = true;
-            List<string> listOppoLeftAngle = new List<string>();
+            var listOppoLeftAngle = new List<string>();
             for (int center = 0; center < COUNT; center++)
             {
                 listOppoLeftAngle.Add(cardsArrays[center, 4 - center]);
@@ -47,7 +47,7 @@ namespace CardGame
         {
             //Right opposite angle score 
             bool rightOppAngleFull = true;
-            List<string> listOppoRightAngle = new List<string>();
+            var listOppoRightAngle = new List<string>();
             for (int center = 0; center < COUNT; center++)
             {
                 listOppoRightAngle.Add(cardsArrays[center, center]);
@@ -69,7 +69,7 @@ namespace CardGame
             for (int col = 0; col < COUNT; col++)
             {
                 bool isColFull = true;
-                List<string> listRow = new List<string>();
+                var listRow = new List<string>();
                 for (int row = 0; row < COUNT; row++)
                 {
                     listRow.Add(cardsArrays[row, col]);
@@ -92,7 +92,7 @@ namespace CardGame
             for (int row = 0; row < COUNT; row++)
             {
                 bool isRowFull = true;
-                List<string> lists = new List<string>();
+                var lists = new List<string>();
                 for (int col = 0; col < COUNT; col++)
                 {
                     lists.Add(cardsArrays[row, col]);
@@ -150,10 +150,8 @@ namespace CardGame
                     score : CardConstant.Flush;
             if (isFlush && isStraight)
             {
-                if (RoyalStraight(valList))
-                    score = CardConstant.RoyalFlush;
-                else
-                    score = CardConstant.StraightFlush;
+                score = RoyalStraight(valList) ? 
+                    CardConstant.RoyalFlush : CardConstant.StraightFlush;
             }
 
             return score;
@@ -225,7 +223,7 @@ namespace CardGame
             //0 represents the amount of specific card in current position 
             int[] positions = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-            List<string> lineNums = new List<string>();
+            var lineNums = new List<string>();
             for (int i = 0; i < COUNT; i++)
             {
                 var current = lists[i].Substring(0, lists[i].Length - 1);
@@ -240,13 +238,10 @@ namespace CardGame
 
             //Record count of two pair and three of a kind
             int countOfBrother = 0;
-            int countOfSwornBrothers = 0;
             for (int i = 0; i < positions.Count(); i++)
             {
                 if (positions[i] == 2)
                     ++countOfBrother;
-                if (positions[i] == 3)
-                    ++countOfSwornBrothers;
             }
 
             return JudgeCouples(countOfBrother, positions.Max());
