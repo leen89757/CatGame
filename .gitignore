@@ -1,13 +1,7 @@
 # Binary files
-
-bin/*
-obj/*
-Debug/*
-.vs/*
+bin/
+obj/
+Debug/
 *.suo
-*.sln
 *.user
 *.csproj
-*.vshost.exe
-*.csproj.user
- 
