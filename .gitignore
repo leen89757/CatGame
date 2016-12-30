@@ -1,18 +1,13 @@
 # Binary files
+
+bin/*
+obj/*
+Debug/*
+.vs/*
 *.suo
-/*.sln
+*.sln
 *.user
 *.csproj
 *.vshost.exe
 *.csproj.user
-
-# Executables
-*.exe
-*.i*86
-*.x86_64
-
-# Debug files
-* bin/
-*.obj/
-*.Debug/
-*..vs/
+ 
