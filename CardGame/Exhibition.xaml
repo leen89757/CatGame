@@ -160,7 +160,7 @@
             </RadioButton>
 
         </WrapPanel>
-        <Button Style="{DynamicResource sideButtonStyle}"
+        <Button Style="{DynamicResource SideButtonStyle}"
                 Margin="0,20"
                 Width="100" Height="50"
                  FontWeight="Bold"

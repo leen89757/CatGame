@@ -8,19 +8,8 @@
             this.Column = colomn;
         }
 
-        private int row;
-        public int Row
-        {
-            get { return row; }
-            set { row = value; }
-        }
+        public int Row { get; set; }
 
-        private int column;
-        public int Column
-        {
-            get { return column; }
-            set { column = value; }
-        }
-
+        public int Column { get; set; }
     }
 }

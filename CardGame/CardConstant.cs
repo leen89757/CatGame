@@ -30,9 +30,9 @@
         public static readonly int EndingPoint = 25;
 
         //Message content
-        public const int TRANSFORM = 0x000001;
-        public const int SUBWIN_CLOSED = 0x000002;
-        public const int CLOSE_EXHIBITION= 0x000003;
+        public const int Transform = 0x000001;
+        public const int SubwinClosed = 0x000002;
+        public const int CloseExhibition= 0x000003;
 
         //Game state
         public static readonly string NextOne = "Next One";

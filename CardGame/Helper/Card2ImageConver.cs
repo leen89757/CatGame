@@ -9,7 +9,7 @@ namespace CardGame.Helper
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string imageUri = string.Format(@"/Assets/{0}.jpg", (string)value);
+            string imageUri = $@"/Assets/{(string) value}.jpg";
             return new BitmapImage(new Uri(imageUri, UriKind.Relative));
         }
 

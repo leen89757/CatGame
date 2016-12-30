@@ -16,21 +16,21 @@ namespace CardGame
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
-        private Random rand = new Random();
+        private readonly Random _rand = new Random();
 
-        private AnimationClock clock = null;
+        private AnimationClock _clock = null;
 
-        private int overturnCounter;
+        private int _overturnCounter;
 
-        private IList<string> cards;
+        private IList<string> _cards;
 
-        private IList<int> foretells = new List<int>();
+        private readonly IList<int> _foretells = new List<int>();
 
-        private IList<int> oldRandoms = new List<int>();
+        private readonly IList<int> _oldRandoms = new List<int>();
 
-        private MediaPlayer player = new MediaPlayer();
+        private readonly MediaPlayer _player = new MediaPlayer();
 
-        private static string[,] CardsArrays = new string[5, 5] {{"","","","","" },
+        private static string[,] _cardsArrays = new string[5, 5] {{"","","","","" },
                                                                 {"","","","","" },
                                                                 {"","","","","" },
                                                                 {"","","","","" },
@@ -43,9 +43,9 @@ namespace CardGame
             //PlayMusic();
             InitCards();
             PrepareCards();
-            Overturn(nextImg, foretells[overturnCounter]);
+            Overturn(nextImg, _foretells[_overturnCounter]);
             this.DataContext = this;
-            player.MediaEnded += MediaEnded;
+            _player.MediaEnded += MediaEnded;
 
             //Register for communicating with Exhibtition 
             Exhibition.MessageNotified += ReveiveMessage;
@@ -56,8 +56,8 @@ namespace CardGame
             var day = DateTime.Now.Day;
             var uri = day % 2 != 0 ?
                 @"Media\ISeeFire.m4a" : @"Media\ChinesePoker.mp3";
-            player.Open(new Uri(uri, UriKind.Relative));
-            player.Play();
+            _player.Open(new Uri(uri, UriKind.Relative));
+            _player.Play();
         }
 
         private void MediaEnded(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace CardGame
             for (int i = 0; i < 26; i++)
             {
                 int index = GenarateNext();
-                foretells.Add(index);
+                _foretells.Add(index);
             }
             #endregion
 
@@ -89,7 +89,7 @@ namespace CardGame
 
         private void InitCards()
         {
-            cards = new List<string>();
+            _cards = new List<string>();
 
             string[] colors = { "s", "h", "c", "d" };
             for (int i = 1; i < 14; i++)
@@ -97,11 +97,11 @@ namespace CardGame
                 for (int j = 0; j < 4; j++)
                 {
                     var singleCard = i.ToString() + colors[j];
-                    cards.Add(singleCard);
+                    _cards.Add(singleCard);
                 }
             }
-            cards.Add(CardConstant.Moon);
-            cards.Add(CardConstant.Sun);
+            _cards.Add(CardConstant.Moon);
+            _cards.Add(CardConstant.Sun);
 
             AssignBlankSource();
         }
@@ -116,29 +116,32 @@ namespace CardGame
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
             Button currentButton = sender as Button;
-            Image img = (Image)currentButton.Content;
-
-            if (overturnCounter > 24)
+            if (currentButton != null)
             {
-                CurrentGhost = (Image)((sender as Button).Content);
-                CurrentGhost.Tag = currentButton.Name.Substring(3);
-                ExhibitAlternative();
+                Image img = (Image)currentButton.Content;
 
-                currentButton.IsEnabled = false;
-            }
-            else
-            {
-                var imageSrc = img.Source.ToString();
-                if (imageSrc.Substring(imageSrc.LastIndexOf("/") + 1) == CardConstant.MoonAsset
-                    || imageSrc.Substring(imageSrc.LastIndexOf("/") + 1) == CardConstant.SunAsset)
+                if (_overturnCounter > 24)
                 {
-                    return;
+                    CurrentGhost = (Image)((sender as Button).Content);
+                    CurrentGhost.Tag = currentButton.Name.Substring(3);
+                    ExhibitAlternative();
+
+                    currentButton.IsEnabled = false;
                 }
+                else
+                {
+                    var imageSrc = img.Source.ToString();
+                    if (imageSrc.Substring(imageSrc.LastIndexOf("/", StringComparison.Ordinal) + 1) == CardConstant.MoonAsset
+                        || imageSrc.Substring(imageSrc.LastIndexOf("/", StringComparison.Ordinal) + 1) == CardConstant.SunAsset)
+                    {
+                        return;
+                    }
 
-                UpdateCardsCoordinate(currentButton);
+                    UpdateCardsCoordinate(currentButton);
 
-                Overturn(img, foretells[overturnCounter++]);
-                TryOverturn(nextImg, foretells[overturnCounter]);
+                    Overturn(img, _foretells[_overturnCounter++]);
+                    TryOverturn(nextImg, _foretells[_overturnCounter]);
+                }
             }
 
             ComputeScore();
@@ -151,8 +154,8 @@ namespace CardGame
             if (int.TryParse((currentButton.Name.Substring(3, 1)), out resRow)
                 && int.TryParse((currentButton.Name.Substring(4, 1)), out resCol))
             {
-                cardInHand = cards[foretells[overturnCounter]];
-                CardsArrays[resRow - 1, resCol - 1] = cardInHand;
+                cardInHand = _cards[_foretells[_overturnCounter]];
+                _cardsArrays[resRow - 1, resCol - 1] = cardInHand;
             }
             if (cardInHand != CardConstant.Sun
                 && cardInHand != CardConstant.Moon)
@@ -179,22 +182,22 @@ namespace CardGame
             return coorGhosts;
         }
 
-        private void TryOverturn(Image nextImg, int foreIndex)
+        private void TryOverturn(Image nextImaage, int foreIndex)
         {
-            if (overturnCounter == CardConstant.EndingPoint)
+            if (_overturnCounter == CardConstant.EndingPoint)
             {
-                nextImg.Source = BlankSource;
+                nextImaage.Source = BlankSource;
                 CheckOver();
             }
             else
             {
-                Overturn(nextImg, foreIndex);
+                Overturn(nextImaage, foreIndex);
             }
         }
 
         private void CheckOver()
         {
-            if (GhostsCount(CardsArrays) == 0)
+            if (GhostsCount(_cardsArrays) == 0)
             {
                 this.Dispatcher.BeginInvoke((Action)delegate ()
                 {
@@ -218,7 +221,7 @@ namespace CardGame
 
         private void StartOpacityAnimation()
         {
-            if (clock == null)
+            if (_clock == null)
             {
                 var opacityAnimation = new DoubleAnimation()
                 {
@@ -229,14 +232,14 @@ namespace CardGame
                     RepeatBehavior = RepeatBehavior.Forever
                 };
 
-                clock = opacityAnimation.CreateClock();
-                nextText.ApplyAnimationClock(TextBlock.OpacityProperty, clock);
+                _clock = opacityAnimation.CreateClock();
+                nextText.ApplyAnimationClock(TextBlock.OpacityProperty, _clock);
             }
         }
 
         private void StopOpacityAnimation()
         {
-            clock?.Controller.Stop();
+            _clock?.Controller?.Stop();
         }
 
         private string Evaluate()
@@ -260,7 +263,7 @@ namespace CardGame
 
         private void Overturn(Image img, int foreIndex)
         {
-            var imgUri = string.Format(@"Assets/{0}.jpg", cards[foreIndex]);
+            var imgUri = $@"Assets/{_cards[foreIndex]}.jpg";
             img.Source = new BitmapImage(new Uri(imgUri, UriKind.Relative));
         }
 
@@ -288,10 +291,10 @@ namespace CardGame
         {
             switch (e.What)
             {
-                case CardConstant.TRANSFORM:
+                case CardConstant.Transform:
                     Transform(e);
                     break;
-                case CardConstant.SUBWIN_CLOSED:
+                case CardConstant.SubwinClosed:
                     AvoidAbnormalClose();
                     break;
                 default:
@@ -309,13 +312,13 @@ namespace CardGame
 
         private void EnsureDesButtonDisabled()
         {
-            var btnName = String.Format("btn{0}", currentGhost.Tag.ToString());
+            var btnName = $"btn{_currentGhost.Tag.ToString()}";
             VisualHelper.FindChild<Button>(this.wholeGrid, btnName).IsEnabled = false;
         }
 
         private void ComputeScore()
         {
-            ScoreList = Scorer.ObtainScores(CardsArrays);
+            ScoreList = Scorer.ObtainScores(_cardsArrays);
 
             int curSum = 0;
             ScoreList.ForEach(p => curSum += p);
@@ -325,84 +328,84 @@ namespace CardGame
 
         private int GenarateNext()
         {
-            int index = rand.Next(0, 54);
-            if (oldRandoms.Contains(index))
+            int index = _rand.Next(0, 54);
+            if (_oldRandoms.Contains(index))
             {
                 return GenarateNext();
             }
             else
             {
-                oldRandoms.Add(index);
+                _oldRandoms.Add(index);
                 return index;
             }
         }
 
         #region member Property
-        private static Image currentGhost = new Image();
+        private static Image _currentGhost = new Image();
         private static Image CurrentGhost
         {
             get
             {
-                return currentGhost;
+                return _currentGhost;
             }
             set
             {
-                currentGhost = value;
+                _currentGhost = value;
             }
         }
 
-        private ImageSource blankSource;
+        private ImageSource _blankSource;
         public ImageSource BlankSource
         {
             get
             {
-                return blankSource;
+                return _blankSource;
             }
             set
             {
-                blankSource = value;
+                _blankSource = value;
                 PropertyChanged?.Invoke(this,
                     new PropertyChangedEventArgs("BlankSource"));
             }
         }
 
-        private ImageSource nextImage;
+        private ImageSource _nextImage;
         public ImageSource NextImage
         {
             get
             {
-                return nextImage;
+                return _nextImage;
             }
             set
             {
-                nextImage = value;
+                _nextImage = value;
                 PropertyChanged?.Invoke(this,
                     new PropertyChangedEventArgs("NextImage"));
             }
         }
 
-        private List<int> scoreList = new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        private List<int> _scoreList = new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public List<int> ScoreList
         {
             get
             {
-                return scoreList;
+                return _scoreList;
             }
             set
             {
-                scoreList = value;
+                _scoreList = value;
                 PropertyChanged?.Invoke(this,
                        new PropertyChangedEventArgs("ScoreList"));
             }
         }
 
-        private int scoreSum;
+        private int _scoreSum;
         public int ScoreSum
         {
-            get { return scoreSum; }
+            get { return _scoreSum; }
             set
             {
-                scoreSum = value;
+                _scoreSum = value;
                 PropertyChanged?.Invoke(this,
                   new PropertyChangedEventArgs("ScoreSum"));
             }
@@ -414,14 +417,14 @@ namespace CardGame
 
         private void ExhibitAlternative()
         {
-            var exhibition = new Exhibition(Filter.FilterCards(CardsArrays));
+            var exhibition = new Exhibition(Filter.FilterCards(_cardsArrays));
             exhibition.Owner = this;
             exhibition.Show();
         }
 
         public void TransformGhost(string imgUri)
         {
-            var imageUri = string.Format(@"Assets/{0}.jpg", imgUri);
+            var imageUri = $@"Assets/{imgUri}.jpg";
             CurrentGhost.Source = new BitmapImage(new Uri(imageUri, UriKind.Relative));
 
             CheckOver();
@@ -433,7 +436,7 @@ namespace CardGame
             if (int.TryParse(CurrentGhost.Tag.ToString().Substring(0, 1), out row)
              && int.TryParse(CurrentGhost.Tag.ToString().Substring(1, 1), out col))
             {
-                CardsArrays[row - 1, col - 1] = candidate;
+                _cardsArrays[row - 1, col - 1] = candidate;
             }
         }
 
@@ -442,11 +445,11 @@ namespace CardGame
             TryCloseOwnedWinWow();
 
             //Reset data
-            overturnCounter = 0;
+            _overturnCounter = 0;
             nextText.Text = CardConstant.NextOne;
 
-            oldRandoms.Clear();
-            foretells.Clear();
+            _oldRandoms.Clear();
+            _foretells.Clear();
             ResetNormalCards();
             ResetScoreRelative();
             AssignBlankSource();
@@ -454,20 +457,23 @@ namespace CardGame
 
             //Restart Game
             PrepareCards();
-            Overturn(nextImg, foretells[overturnCounter]);
+            Overturn(nextImg, _foretells[_overturnCounter]);
         }
 
         private void TryCloseOwnedWinWow()
         {
             for (int i = 0; i < this.OwnedWindows.Count; i++)
-                this.OwnedWindows[i].Close();
+            {
+                var ownedWindow = this.OwnedWindows[i];
+                ownedWindow?.Close();
+            }
         }
 
         private void ResetScoreRelative()
         {
             ScoreSum = 0;
             ScoreList = new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-            CardsArrays = new string[5, 5] {{"","","","","" },
+            _cardsArrays = new string[5, 5] {{"","","","","" },
                                             {"","","","","" },
                                             {"","","","","" },
                                             {"","","","","" },
@@ -476,12 +482,11 @@ namespace CardGame
 
         private void EnableAllButtons()
         {
-            var desName = String.Empty;
             for (int i = 1; i < 6; i++)
             {
                 for (int j = 1; j < 6; j++)
                 {
-                    desName = String.Format("btn{0}{1}", i.ToString(), j.ToString());
+                    var desName = $"btn{i.ToString()}{j.ToString()}";
                     var curButton = VisualHelper.FindChild<Button>(this.wholeGrid, desName);
 
                     curButton.IsEnabled = true;
@@ -512,13 +517,12 @@ namespace CardGame
 
         private void AvoidAbnormalClose()
         {
-            var coor = SearchForGhost(CardsArrays);
+            var coor = SearchForGhost(_cardsArrays);
 
             coor.ForEach(p =>
             {
                 var des = VisualHelper.FindChild<Button>(this.wholeGrid,
-                                   string.Format("btn{0}{1}", (p.Row + 1).ToString(),
-                                   (p.Column + 1).ToString()));
+                    $"btn{(p.Row + 1).ToString()}{(p.Column + 1).ToString()}");
 
                 des.IsEnabled = true;
             });

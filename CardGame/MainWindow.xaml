@@ -4,13 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardGame"
-        xmlns:Cvter="clr-namespace:CardGame.Converters"
+        xmlns:helper="clr-namespace:CardGame.Helper"
         mc:Ignorable="d"
         Title="Card Game" Height="840" Width="760" Background="#FF086F9E"
         MinWidth="760">
 
     <Window.Resources>
-        <Cvter:ScoreConverter x:Key="score2Image"/>
+        <helper:ScoreConverter x:Key="Score2Image"/>
         <Style TargetType="{x:Type TextBlock}">
             <Style.Setters>
                 <Setter Property="TextAlignment" Value="Center"/>
@@ -207,7 +207,7 @@
             <StackPanel VerticalAlignment="Center">
                 <Button x:Name="againButton"
                         Margin="0,10"
-                         Style="{DynamicResource sideButtonStyle}"
+                         Style="{DynamicResource SideButtonStyle}"
                          Width="100"
                         Height="40"
                         FontWeight="Bold"
@@ -220,51 +220,51 @@
         </Border>
         <Border Grid.Row="5" Grid.Column="0">
             <Image  Source="{Binding Path=ScoreList[11],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="1">
             <Image  Source="{Binding Path=ScoreList[6],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="2">
             <Image  Source="{Binding Path=ScoreList[7],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="3">
             <Image  Source="{Binding Path=ScoreList[8],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="4">
             <Image  Source="{Binding Path=ScoreList[9],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="5">
             <Image  Source="{Binding Path=ScoreList[10],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="5" Grid.Column="6">
             <Image  Source="{Binding Path=ScoreList[5],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="4" Grid.Column="6">
             <Image  Source="{Binding Path=ScoreList[4],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="3" Grid.Column="6">
             <Image  Source="{Binding Path=ScoreList[3],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="2" Grid.Column="6">
             <Image  Source="{Binding Path=ScoreList[2],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="1" Grid.Column="6">
             <Image  Source="{Binding Path=ScoreList[1],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
         <Border Grid.Row="0" Grid.Column="6">
             <Image  Source="{Binding Path=ScoreList[0],
-                Converter={StaticResource score2Image}}"/>
+                Converter={StaticResource Score2Image}}"/>
         </Border>
     </Grid>
 </Window>

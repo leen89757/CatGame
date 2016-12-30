@@ -14,7 +14,7 @@ namespace CardGame
     {
         public static event EventHandler<MessageEventAgrs> MessageNotified;
 
-        private string checkedOne = string.Empty;
+        private string _checkedOne = string.Empty;
 
         public Exhibition(List<string> restsCards)
         {
@@ -41,12 +41,12 @@ namespace CardGame
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             var cur = sender as RadioButton;
-            checkedOne = RestsCards[int.Parse(cur.Tag.ToString())];
+            _checkedOne = RestsCards[int.Parse(cur.Tag.ToString())];
         }
 
         private void TransForm_Click(object sender, RoutedEventArgs e)
         {
-            if (checkedOne == string.Empty)
+            if (_checkedOne == string.Empty)
             {
                 MessageBoxX.Show("Warm Prompt", "Please choose one card");
                 return;
@@ -55,19 +55,19 @@ namespace CardGame
             this.Close();
 
             //Back to home page
-            SendMessage(new MessageEventAgrs(CardConstant.TRANSFORM, checkedOne));
+            SendMessage(new MessageEventAgrs(CardConstant.Transform, _checkedOne));
         }
 
-        private List<string> restsCards;
+        private List<string> _restsCards;
         public List<string> RestsCards
         {
             get
             {
-                return restsCards;
+                return _restsCards;
             }
             set
             {
-                restsCards = value;
+                _restsCards = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RestsCards"));
             }
         }
@@ -81,7 +81,7 @@ namespace CardGame
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            SendMessage(new MessageEventAgrs(CardConstant.SUBWIN_CLOSED, null));
+            SendMessage(new MessageEventAgrs(CardConstant.SubwinClosed, null));
         }
     } 
 }

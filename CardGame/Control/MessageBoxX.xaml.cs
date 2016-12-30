@@ -29,17 +29,20 @@ namespace CardGame
 
         public static bool? Show(string title, string msg )
         {
-            var msgBox = new MessageBoxX();
-            msgBox.Title = title;
-            msgBox.Message = msg;
+            var msgBox = new MessageBoxX
+            {
+                Title = title,
+                Message = msg
+            };
             return msgBox.ShowDialog();
         }
 
         private void Ok_Tapped(object sender, MouseButtonEventArgs e)
         {
             this.IsEnabled = false;
-            dialog.OpacityMask = this.FindResource("ClosedBrush") as LinearGradientBrush;
-            Storyboard storyboard = this.FindResource("ClosedStoryboard") as Storyboard;
+            dialog.OpacityMask = FindResource("ClosedBrush") as LinearGradientBrush;
+            var storyboard = this.FindResource("ClosedStoryboard") as Storyboard;
+            if (storyboard == null) return;
             storyboard.Completed += delegate { Close(); };
 
             storyboard.Begin();

@@ -164,8 +164,8 @@ namespace CardGame
             var valList = new List<int>();
             lists.ForEach(p =>
             {
-                int val = 0;
-                if ((int.TryParse)(p.Substring(0, p.Length - 1), out val))
+                var val = 0;
+                if ((int.TryParse(p.Substring(0, p.Length - 1), out val)))
                 {
                     valList.Add(val);
                 }
@@ -254,35 +254,16 @@ namespace CardGame
 
         private static CouplesType JudgeCouples(int countOfBrother, int maxRepeatTimes)
         {
-            if (maxRepeatTimes == 4)
+            switch (maxRepeatTimes)
             {
-                return CouplesType.FourOfAKind;
-            }
-            if (maxRepeatTimes == 3)
-            {
-                if (countOfBrother == 1)
-                {
-                    return CouplesType.FullHouse;
-                }
-                else
-                {
-                    return CouplesType.ThreeOfAKind;
-                }
-            }
-            if (maxRepeatTimes == 2)
-            {
-                if (countOfBrother == 2)
-                {
-                    return CouplesType.TwoPair;
-                }
-                else
-                {
-                    return CouplesType.Pair;
-                }
-            }
-            else
-            {
-                return CouplesType.Null;
+                case 4:
+                    return CouplesType.FourOfAKind;
+                case 3:
+                    return countOfBrother == 1 ? CouplesType.FullHouse : CouplesType.ThreeOfAKind;
+                case 2:
+                    return countOfBrother == 2 ? CouplesType.TwoPair : CouplesType.Pair;
+                default:
+                    return CouplesType.Null;
             }
         }
     }
