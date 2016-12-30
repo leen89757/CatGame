@@ -328,13 +328,12 @@ namespace CardGame
 
         private int GenarateNext()
         {
-            int index = _rand.Next(0, 54);
-            if (_oldRandoms.Contains(index))
+            while (true)
             {
-                return GenarateNext();
-            }
-            else
-            {
+                var index = _rand.Next(0, 54);
+                if (_oldRandoms.Contains(index))
+                    continue;
+
                 _oldRandoms.Add(index);
                 return index;
             }
