@@ -41,7 +41,8 @@ namespace CardGame
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             var cur = sender as RadioButton;
-            _checkedOne = RestsCards[int.Parse(cur.Tag.ToString())];
+            if (cur != null)
+                _checkedOne = RestsCards[int.Parse(cur.Tag.ToString())];
         }
 
         private void TransForm_Click(object sender, RoutedEventArgs e)
@@ -83,5 +84,5 @@ namespace CardGame
         {
             SendMessage(new MessageEventAgrs(CardConstant.SubwinClosed, null));
         }
-    } 
+    }
 }
