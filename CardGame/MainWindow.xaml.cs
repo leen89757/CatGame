@@ -14,11 +14,11 @@ namespace CardGame
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : INotifyPropertyChanged
     {
         private readonly Random _rand = new Random();
 
-        private AnimationClock _clock = null;
+        private AnimationClock _clock;
 
         private int _overturnCounter;
 
