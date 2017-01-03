@@ -17,14 +17,14 @@ namespace CardGame
 
         public new string Title
         {
-            get { return this.lblTitle.Text; }
-            set { this.lblTitle.Text = value; }
+            get { return this.LblTitle.Text; }
+            set { this.LblTitle.Text = value; }
         }
 
         public string Message
         {
-            get { return this.lblMsg.Text; }
-            set { this.lblMsg.Text = value; }
+            get { return this.LblMsg.Text; }
+            set { this.LblMsg.Text = value; }
         }
 
         public static bool? Show(string title, string msg )

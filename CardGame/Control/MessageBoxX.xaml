@@ -22,6 +22,7 @@
     </Window.Triggers>
 
     <Window.Resources>
+        <!-- ReSharper disable once Xaml.RedundantResource -->
         <Storyboard x:Key="ClosedStoryboard" Storyboard.TargetName="Dialog">
             <DoubleAnimation From="1" To="0" Duration="0:0:1" Storyboard.TargetProperty="OpacityMask.(GradientBrush.GradientStops)[1].Offset"/>
             <DoubleAnimation From="1" To="0" Duration="0:0:0.5" Storyboard.TargetProperty="OpacityMask.(GradientBrush.GradientStops)[2].Offset"
@@ -29,6 +30,7 @@
             <ColorAnimation To="#00000000" Duration="0" Storyboard.TargetProperty="OpacityMask.(GradientBrush.GradientStops)[2].Color"/>
         </Storyboard>
 
+        <!-- ReSharper disable once Xaml.RedundantResource -->
         <LinearGradientBrush x:Key="ClosedBrush" StartPoint="0.5,0" EndPoint="0.5,1">
             <GradientStop Color="#FF000000" Offset="0"/>
             <GradientStop Color="#FF000000" Offset="1"/>
@@ -41,13 +43,13 @@
             <Border Canvas.Top="0" Height="25" 
                     Width="{Binding ElementName=Dialog, Path=Width,UpdateSourceTrigger=PropertyChanged}" 
                     BorderThickness="0,0,0,1" BorderBrush="Wheat">
-                <TextBlock x:Name="lblTitle" Text="Title" 
+                <TextBlock x:Name="LblTitle" Text="Title" 
                            HorizontalAlignment="Left" 
                            VerticalAlignment="Center"
                            Foreground="Wheat" FontSize="14"
                            FontWeight="DemiBold"  Margin="5"/>
             </Border>
-            <TextBlock x:Name="lblMsg"
+            <TextBlock x:Name="LblMsg"
                        Foreground="White" FontSize="16" 
                        TextWrapping="Wrap" Text="Here comes the message.."
                        Opacity="0.8"  

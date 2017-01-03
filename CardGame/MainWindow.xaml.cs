@@ -297,8 +297,6 @@ namespace CardGame
                 case CardConstant.SubwinClosed:
                     AvoidAbnormalClose();
                     break;
-                default:
-                    break;
             }
         }
 
@@ -416,8 +414,7 @@ namespace CardGame
 
         private void ExhibitAlternative()
         {
-            var exhibition = new Exhibition(Filter.FilterCards(_cardsArrays));
-            exhibition.Owner = this;
+            var exhibition = new Exhibition(Filter.FilterCards(_cardsArrays)) {Owner = this};
             exhibition.Show();
         }
 
@@ -485,7 +482,7 @@ namespace CardGame
             {
                 for (int j = 1; j < 6; j++)
                 {
-                    var desName = $"Btn{i.ToString()}{j.ToString()}";
+                    var desName = $"Btn{i}{j}";
                     var curButton = VisualHelper.FindChild<Button>(this.WholeGrid, desName);
 
                     curButton.IsEnabled = true;
