@@ -69,7 +69,7 @@ namespace CardGame
             set
             {
                 _restsCards = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RestsCards"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RestsCards)));
             }
         }
 

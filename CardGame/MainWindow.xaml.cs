@@ -362,7 +362,7 @@ namespace CardGame
             {
                 _blankSource = value;
                 PropertyChanged?.Invoke(this,
-                    new PropertyChangedEventArgs("BlankSource"));
+                    new PropertyChangedEventArgs(nameof(BlankSource)));
             }
         }
 
@@ -377,7 +377,7 @@ namespace CardGame
             {
                 _nextImage = value;
                 PropertyChanged?.Invoke(this,
-                    new PropertyChangedEventArgs("NextImage"));
+                    new PropertyChangedEventArgs(nameof(NextImage)));
             }
         }
 
@@ -392,7 +392,7 @@ namespace CardGame
             {
                 _scoreList = value;
                 PropertyChanged?.Invoke(this,
-                       new PropertyChangedEventArgs("ScoreList"));
+                       new PropertyChangedEventArgs(nameof(ScoreList)));
             }
         }
 
@@ -404,7 +404,7 @@ namespace CardGame
             {
                 _scoreSum = value;
                 PropertyChanged?.Invoke(this,
-                  new PropertyChangedEventArgs("ScoreSum"));
+                  new PropertyChangedEventArgs(nameof(ScoreSum)));
             }
         }
 
