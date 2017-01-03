@@ -43,7 +43,7 @@ namespace CardGame
             PlayMusic();
             InitCards();
             PrepareCards();
-            Overturn(nextImg, _foretells[_overturnCounter]);
+            Overturn(NextImg, _foretells[_overturnCounter]);
             this.DataContext = this;
             _player.MediaEnded += MediaEnded;
 
@@ -140,7 +140,7 @@ namespace CardGame
                     UpdateCardsCoordinate(currentButton);
 
                     Overturn(img, _foretells[_overturnCounter++]);
-                    TryOverturn(nextImg, _foretells[_overturnCounter]);
+                    TryOverturn(NextImg, _foretells[_overturnCounter]);
                 }
             }
 
@@ -201,7 +201,7 @@ namespace CardGame
             {
                 this.Dispatcher.BeginInvoke((Action)delegate ()
                 {
-                    nextText.Text = CardConstant.Over;
+                    NextText.Text = CardConstant.Over;
                 });
                 ComputeScore();
                 StopOpacityAnimation();
@@ -212,7 +212,7 @@ namespace CardGame
             {
                 this.Dispatcher.BeginInvoke((Action)delegate ()
                 {
-                    nextText.Text = CardConstant.Trans;
+                    NextText.Text = CardConstant.Trans;
 
                     StartOpacityAnimation();
                 });
@@ -233,7 +233,7 @@ namespace CardGame
                 };
 
                 _clock = opacityAnimation.CreateClock();
-                nextText.ApplyAnimationClock(TextBlock.OpacityProperty, _clock);
+                NextText.ApplyAnimationClock(TextBlock.OpacityProperty, _clock);
             }
         }
 
@@ -312,8 +312,8 @@ namespace CardGame
 
         private void EnsureDesButtonDisabled()
         {
-            var btnName = $"btn{_currentGhost.Tag.ToString()}";
-            VisualHelper.FindChild<Button>(this.wholeGrid, btnName).IsEnabled = false;
+            var btnName = $"Btn{_currentGhost.Tag.ToString()}";
+            VisualHelper.FindChild<Button>(this.WholeGrid, btnName).IsEnabled = false;
         }
 
         private void ComputeScore()
@@ -445,7 +445,7 @@ namespace CardGame
 
             //Reset data
             _overturnCounter = 0;
-            nextText.Text = CardConstant.NextOne;
+            NextText.Text = CardConstant.NextOne;
 
             _oldRandoms.Clear();
             _foretells.Clear();
@@ -456,7 +456,7 @@ namespace CardGame
 
             //Restart Game
             PrepareCards();
-            Overturn(nextImg, _foretells[_overturnCounter]);
+            Overturn(NextImg, _foretells[_overturnCounter]);
         }
 
         private void TryCloseOwnedWinWow()
@@ -485,8 +485,8 @@ namespace CardGame
             {
                 for (int j = 1; j < 6; j++)
                 {
-                    var desName = $"btn{i.ToString()}{j.ToString()}";
-                    var curButton = VisualHelper.FindChild<Button>(this.wholeGrid, desName);
+                    var desName = $"Btn{i.ToString()}{j.ToString()}";
+                    var curButton = VisualHelper.FindChild<Button>(this.WholeGrid, desName);
 
                     curButton.IsEnabled = true;
                     ((Image)curButton.Content).Source = BlankSource;
@@ -520,8 +520,8 @@ namespace CardGame
 
             coor.ForEach(p =>
             {
-                var des = VisualHelper.FindChild<Button>(this.wholeGrid,
-                    $"btn{(p.Row + 1).ToString()}{(p.Column + 1).ToString()}");
+                var des = VisualHelper.FindChild<Button>(this.WholeGrid,
+                    $"Btn{(p.Row + 1).ToString()}{(p.Column + 1).ToString()}");
 
                 des.IsEnabled = true;
             });

@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CardGame"
         xmlns:helper="clr-namespace:CardGame.Helper"
         mc:Ignorable="d"
         Title="Card Game" Height="840" Width="760" Background="#FF086F9E"
@@ -28,7 +27,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid ShowGridLines="False" x:Name="wholeGrid"
+    <Grid ShowGridLines="False" x:Name="WholeGrid"
           HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -47,89 +46,89 @@
             <RowDefinition Height="142"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btn11" Grid.Row="0" Grid.Column="1" Click="Btn_Click" Width="100" Height="142">
+        <Button x:Name="Btn11" Grid.Row="0" Grid.Column="1" Click="Btn_Click" Width="100" Height="142">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn12" Grid.Row="0" Grid.Column="2" Click="Btn_Click">
+        <Button x:Name="Btn12" Grid.Row="0" Grid.Column="2" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn13" Grid.Row="0" Grid.Column="3" Click="Btn_Click">
+        <Button x:Name="Btn13" Grid.Row="0" Grid.Column="3" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn14" Grid.Row="0" Grid.Column="4" Click="Btn_Click">
+        <Button x:Name="Btn14" Grid.Row="0" Grid.Column="4" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn15" Grid.Row="0" Grid.Column="5" Click="Btn_Click">
+        <Button x:Name="Btn15" Grid.Row="0" Grid.Column="5" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn21" Grid.Row="1" Grid.Column="1" Click="Btn_Click">
+        <Button x:Name="Btn21" Grid.Row="1" Grid.Column="1" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn22" Grid.Row="1" Grid.Column="2" Click="Btn_Click">
+        <Button x:Name="Btn22" Grid.Row="1" Grid.Column="2" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn23" Grid.Row="1" Grid.Column="3" Click="Btn_Click">
+        <Button x:Name="Btn23" Grid.Row="1" Grid.Column="3" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn24" Grid.Row="1" Grid.Column="4" Click="Btn_Click">
+        <Button x:Name="Btn24" Grid.Row="1" Grid.Column="4" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn25" Grid.Row="1" Grid.Column="5" Click="Btn_Click">
+        <Button x:Name="Btn25" Grid.Row="1" Grid.Column="5" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn31" Grid.Row="2" Grid.Column="1" Click="Btn_Click">
+        <Button x:Name="Btn31" Grid.Row="2" Grid.Column="1" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn32" Grid.Row="2" Grid.Column="2" Click="Btn_Click">
+        <Button x:Name="Btn32" Grid.Row="2" Grid.Column="2" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn33" Grid.Row="2" Grid.Column="3" Click="Btn_Click">
+        <Button x:Name="Btn33" Grid.Row="2" Grid.Column="3" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn34" Grid.Row="2" Grid.Column="4" Click="Btn_Click">
+        <Button x:Name="Btn34" Grid.Row="2" Grid.Column="4" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn35" Grid.Row="2" Grid.Column="5" Click="Btn_Click">
+        <Button x:Name="Btn35" Grid.Row="2" Grid.Column="5" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn41" Grid.Row="3" Grid.Column="1" Click="Btn_Click">
+        <Button x:Name="Btn41" Grid.Row="3" Grid.Column="1" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn42" Grid.Row="3" Grid.Column="2" Click="Btn_Click">
+        <Button x:Name="Btn42" Grid.Row="3" Grid.Column="2" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn43" Grid.Row="3" Grid.Column="3" Click="Btn_Click">
+        <Button x:Name="Btn43" Grid.Row="3" Grid.Column="3" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn44" Grid.Row="3" Grid.Column="4" Click="Btn_Click">
+        <Button x:Name="Btn44" Grid.Row="3" Grid.Column="4" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn45" Grid.Row="3" Grid.Column="5" Click="Btn_Click">
+        <Button x:Name="Btn45" Grid.Row="3" Grid.Column="5" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn51" Grid.Row="4" Grid.Column="1" Click="Btn_Click">
+        <Button x:Name="Btn51" Grid.Row="4" Grid.Column="1" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn52" Grid.Row="4" Grid.Column="2" Click="Btn_Click">
+        <Button x:Name="Btn52" Grid.Row="4" Grid.Column="2" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn53" Grid.Row="4" Grid.Column="3" Click="Btn_Click">
+        <Button x:Name="Btn53" Grid.Row="4" Grid.Column="3" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn54" Grid.Row="4" Grid.Column="4" Click="Btn_Click">
+        <Button x:Name="Btn54" Grid.Row="4" Grid.Column="4" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
-        <Button x:Name="btn55" Grid.Row="4" Grid.Column="5" Click="Btn_Click">
+        <Button x:Name="Btn55" Grid.Row="4" Grid.Column="5" Click="Btn_Click">
             <Image Source="{Binding Path=BlankSource}"/>
         </Button>
 
-        <Grid Grid.Column="0" Grid.RowSpan="2" Background="#FF086F9E">
+        <Grid Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#FF086F9E">
             <Border Margin="0,3">
                 <StackPanel VerticalAlignment="Center">
-                    <Image x:Name="nextImg" 
+                    <Image x:Name="NextImg" 
                    Source="{Binding Path=ForetellImage}"
                    Width="105" Height="150"/>
-                    <TextBlock x:Name="nextText" 
+                    <TextBlock x:Name="NextText" 
                 VerticalAlignment="Bottom"
                        Margin="0,20"
                        FontStyle="Italic"
@@ -143,7 +142,7 @@
 
         <TextBlock Text="Game Rule"  
                    Grid.Row="3"
-                   Grid.RowSpan="2"
+                   Grid.RowSpan="2" Grid.Column="0"
                    Height="50"
                    Foreground="Orange"
                    Opacity="0.5"
@@ -205,7 +204,7 @@
                 Width="150" Height="120"
                 Background="#FF086F9E">
             <StackPanel VerticalAlignment="Center">
-                <Button x:Name="againButton"
+                <Button x:Name="AgainButton"
                         Margin="0,10"
                          Style="{DynamicResource SideButtonStyle}"
                          Width="100"

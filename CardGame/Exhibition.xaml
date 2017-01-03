@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CardGame"
         xmlns:cvter="clr-namespace:CardGame.Helper"
         mc:Ignorable="d"
         Title="Exhibition Hall" Height="600" Width="1140" MinWidth="1140" MinHeight="580"
@@ -17,8 +16,8 @@
                 <Setter Property="Height" Value="140"/>
             </Style.Setters>
         </Style>
-        <cvter:Card2ImageConver x:Key="card2Image"/>
-        <Style x:Key="boxRadioButtonStyle" TargetType="{x:Type RadioButton}">
+        <cvter:Card2ImageConver x:Key="Card2Image"/>
+        <Style x:Key="BoxRadioButtonStyle" TargetType="{x:Type RadioButton}">
             <Setter Property="Background" Value="Transparent"></Setter>
             <Setter Property="Foreground" Value="Transparent"></Setter>
             <Setter Property="Padding" Value="3 2 3 2"></Setter>
@@ -69,94 +68,94 @@
 
     <StackPanel Orientation="Vertical">
         <WrapPanel VerticalAlignment="Center" >
-            <RadioButton Tag="0" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[0],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="0" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[0],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="1" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[1],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="1" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[1],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="2" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[2],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="2" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[2],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="3" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[3],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="3" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[3],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="4" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[4],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="4" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[4],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="5" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[5] ,Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="5" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[5] ,Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="6" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[6] ,Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="6" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[6] ,Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="7" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[7] ,Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="7" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[7] ,Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="8" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[8],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="8" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[8],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="9" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[9],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-
-            <RadioButton Tag="10" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[10],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-            <RadioButton Tag="11" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[11],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-            <RadioButton Tag="12" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[12],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-            <RadioButton Tag="13" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[13],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-            <RadioButton Tag="14" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[14],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-            <RadioButton Tag="15" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[15],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-            <RadioButton Tag="16" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[16],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-            <RadioButton Tag="17" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[17],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-            <RadioButton Tag="18" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[18],Converter={StaticResource card2Image}}"/>
-            </RadioButton>
-            <RadioButton Tag="19" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[19],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="9" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[9],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
 
-            <RadioButton Tag="20" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[20],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="10" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[10],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="21" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[21],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="11" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[11],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="22" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[22],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="12" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[12],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="23" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[23],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="13" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[13],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="24" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[24],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="14" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[14],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="25" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[25],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="15" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[15],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton Tag="26" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}">
-                <Image Source="{Binding Path=RestsCards[26],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="16" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[16],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton x:Name="possibleRadioButton1" Tag="27" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}" Visibility="Collapsed">
-                <Image Source="{Binding Path=RestsCards[27],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="17" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[17],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
-            <RadioButton x:Name="possibleRadioButton2" Tag="28" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource boxRadioButtonStyle}" Visibility="Collapsed">
-                <Image Source="{Binding Path=RestsCards[28],Converter={StaticResource card2Image}}"/>
+            <RadioButton Tag="18" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[18],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+            <RadioButton Tag="19" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[19],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+
+            <RadioButton Tag="20" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[20],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+            <RadioButton Tag="21" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[21],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+            <RadioButton Tag="22" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[22],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+            <RadioButton Tag="23" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[23],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+            <RadioButton Tag="24" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[24],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+            <RadioButton Tag="25" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[25],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+            <RadioButton Tag="26" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}">
+                <Image Source="{Binding Path=RestsCards[26],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+            <RadioButton x:Name="PossibleRadioButton1" Tag="27" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}" Visibility="Collapsed">
+                <Image Source="{Binding Path=RestsCards[27],Converter={StaticResource Card2Image}}"/>
+            </RadioButton>
+            <RadioButton x:Name="PossibleRadioButton2" Tag="28" Checked="RadioButton_Checked" GroupName="restGroup" Style="{DynamicResource BoxRadioButtonStyle}" Visibility="Collapsed">
+                <Image Source="{Binding Path=RestsCards[28],Converter={StaticResource Card2Image}}"/>
             </RadioButton>
 
         </WrapPanel>

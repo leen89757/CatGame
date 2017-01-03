@@ -3,18 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CardGame"
         mc:Ignorable="d"
         Title="MessageBoxX" Height="180" Width="360" WindowStyle="None"   
         Background="{x:Null}"  
-        ResizeMode="NoResize"  x:Name="dialog"
+        ResizeMode="NoResize"  x:Name="Dialog"
         AllowsTransparency="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Trag_Tapped">
     <Window.Triggers>
         <EventTrigger RoutedEvent="Window.Loaded" >
             <BeginStoryboard>
-                <Storyboard Name="sbOpShow">
+                <Storyboard Name="SbOpShow">
                     <DoubleAnimation
-                    Storyboard.TargetName="dialog" 
+                    Storyboard.TargetName="Dialog" 
                     Storyboard.TargetProperty="Opacity" 
                     From="0" To="1" Duration="0:0:0.5"/>
                 </Storyboard>
@@ -23,7 +22,7 @@
     </Window.Triggers>
 
     <Window.Resources>
-        <Storyboard x:Key="ClosedStoryboard" Storyboard.TargetName="dialog">
+        <Storyboard x:Key="ClosedStoryboard" Storyboard.TargetName="Dialog">
             <DoubleAnimation From="1" To="0" Duration="0:0:1" Storyboard.TargetProperty="OpacityMask.(GradientBrush.GradientStops)[1].Offset"/>
             <DoubleAnimation From="1" To="0" Duration="0:0:0.5" Storyboard.TargetProperty="OpacityMask.(GradientBrush.GradientStops)[2].Offset"
                              BeginTime="0:0:0.5"/>
@@ -40,7 +39,7 @@
     <Border Background="#FF007E7D" Opacity="1" CornerRadius="3">
         <Canvas>
             <Border Canvas.Top="0" Height="25" 
-                    Width="{Binding ElementName=dialog, Path=Width,UpdateSourceTrigger=PropertyChanged}" 
+                    Width="{Binding ElementName=Dialog, Path=Width,UpdateSourceTrigger=PropertyChanged}" 
                     BorderThickness="0,0,0,1" BorderBrush="Wheat">
                 <TextBlock x:Name="lblTitle" Text="Title" 
                            HorizontalAlignment="Left" 

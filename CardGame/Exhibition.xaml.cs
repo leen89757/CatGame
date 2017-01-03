@@ -27,9 +27,9 @@ namespace CardGame
 
         private void CheckIfVisible()
         {
-            this.possibleRadioButton1.Visibility = RestsCards.Count > 27 ?
+            this.PossibleRadioButton1.Visibility = RestsCards.Count > 27 ?
                Visibility.Visible : Visibility.Collapsed;
-            this.possibleRadioButton2.Visibility = RestsCards.Count > 28 ?
+            this.PossibleRadioButton2.Visibility = RestsCards.Count > 28 ?
                  Visibility.Visible : Visibility.Collapsed;
         }
 

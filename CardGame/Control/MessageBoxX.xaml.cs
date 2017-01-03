@@ -40,7 +40,7 @@ namespace CardGame
         private void Ok_Tapped(object sender, MouseButtonEventArgs e)
         {
             this.IsEnabled = false;
-            dialog.OpacityMask = FindResource("ClosedBrush") as LinearGradientBrush;
+            Dialog.OpacityMask = FindResource("ClosedBrush") as LinearGradientBrush;
             var storyboard = this.FindResource("ClosedStoryboard") as Storyboard;
             if (storyboard == null) return;
             storyboard.Completed += delegate { Close(); };
