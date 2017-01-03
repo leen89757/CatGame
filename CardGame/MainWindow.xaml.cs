@@ -305,10 +305,10 @@ namespace CardGame
             InsertBack((string)message.Obj);
             TransformGhost((string)message.Obj);
             ComputeScore();
-            EnsureDesButtonDisabled();
+            EnsureGhostButtonDisabled();
         }
 
-        private void EnsureDesButtonDisabled()
+        private void EnsureGhostButtonDisabled()
         {
             var btnName = $"Btn{_currentGhost.Tag.ToString()}";
             VisualHelper.FindChild<Button>(this.WholeGrid, btnName).IsEnabled = false;
